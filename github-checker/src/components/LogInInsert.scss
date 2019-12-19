@@ -1,0 +1,16 @@
+input {
+    margin-top: 1.5rem;
+    background: white;
+    width: 256px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.3rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: black;
+    border: solid red;
+    &::placeholder {
+        color: grey;
+    }
+}
