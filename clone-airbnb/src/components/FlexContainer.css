@@ -1,0 +1,6 @@
+.flex-container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap : wrap;
+    margin-bottom: 150px;
+}

@@ -1,0 +1,7 @@
+.label {
+    border: 1px solid;
+}
+.centry-container {
+    display: flex;
+    justify-content: space-between;
+}

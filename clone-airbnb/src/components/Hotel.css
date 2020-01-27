@@ -1,0 +1,12 @@
+.hotel {
+    flex-direction: column;
+    margin-left: 10px;
+}
+.hotel-img {
+    border-radius: 0 0 0 0;
+    width: 250px;
+    height: 150px;
+}
+p {
+    font-size: 15px;
+}

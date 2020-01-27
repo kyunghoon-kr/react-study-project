@@ -1,0 +1,14 @@
+.country {
+    flex-direction: column;
+    border-radius: 10%;
+    border: 1px solid;
+    margin-left: 10px;
+}
+img {
+    border-radius: 10% 10% 0 0;
+    width: 150px;
+    height: 80px;
+}
+p {
+    font-size: 15px;
+}
