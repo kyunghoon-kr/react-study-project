@@ -1,0 +1,42 @@
+button {
+    background-color: red;
+    color: white;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.form {
+    margin-left: 100px;
+    background-color: beige;
+    width: 500px;
+}
+.flex-container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap : wrap;
+}
+
+.text-bottom {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+input{
+    border: 2px solid;
+    padding: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.text {
+    font-size: 15px;
+}
+.fill {
+    width: 450px;
+    align-items: center;
+
+}
+
+.border-line {
+    padding: 0 30px;
+    margin-right: 30px;
+    border-right: 3px solid;
+}

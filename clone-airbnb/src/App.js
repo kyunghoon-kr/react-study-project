@@ -9,6 +9,7 @@ import seoul from './components/source/seoul.jpg';
 import newyork from './components/source/newyork.jpg';
 import CountryList from './components/CountryList';
 import HotelList from './components/HotelList';
+import Form from './components/Form';
 const App = (props) => {
   const [countries, setCountries] = useState([
     {
@@ -99,6 +100,7 @@ const App = (props) => {
 
   return (
     <div>
+      <Form/>
       <h3>에어비엔비와 함께 전 세계를 여행해 보세요.</h3>
       <CountryList countries={countries}/>
       <h3>최고 평점을 받은 숙소</h3>
