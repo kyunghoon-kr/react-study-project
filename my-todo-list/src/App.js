@@ -43,12 +43,12 @@ const App = (props) => {
     [todos],
   );
 
-  const onToggle = useCallback(
+  const onToggle = useCallback( 
     id => {
       setTodos(
         todos.map(todo =>
           todo.id === id ? { ...todo, checked: !todo.checked } : todo,
-          ),
+          )
       );
     },
     [todos],

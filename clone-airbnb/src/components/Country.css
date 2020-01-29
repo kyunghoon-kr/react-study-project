@@ -4,7 +4,7 @@
     border: 1px solid;
     margin-left: 10px;
 }
-img {
+.country-img {
     border-radius: 10% 10% 0 0;
     width: 150px;
     height: 80px;
