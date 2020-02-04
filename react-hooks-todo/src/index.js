@@ -4,9 +4,10 @@ import Typography from '@material-ui/core/Typography';
 import './styles.css';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
+import useTodoState from './useTodoState';
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, addTodo, deleteTodo] = useTodoState([]);
   return (
     <div className="App">
       <Typography component="h1" variant="h2">
