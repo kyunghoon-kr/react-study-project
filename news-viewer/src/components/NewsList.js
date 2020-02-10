@@ -19,7 +19,7 @@ const NewsListBlock = styled.div`
 
 // Api 요청은 useEffect에서 한다
 
-const NewsList = (props) => {
+const NewsList = ({category}) => {
 
     const [articles, setArticles] = useState(null); // api에서 받아오도록 Null로 초기화
     const [loading, setLoading] = useState(false); // 비동기화 작업 중 상태를 나타낼 boolean state
@@ -30,7 +30,8 @@ const NewsList = (props) => {
         const fecthData = async() => {
             setLoading(true);
             try {
-                const response = await axios.get('https://newsapi.org/v2/top-headlines?country=kr&apiKey=4bfb8b1da90a497b97f5ee81cb843c37', );
+                const query = category === 'all' ? '' : `&category=${category}`;
+                const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=4bfb8b1da90a497b97f5ee81cb843c37`, );
                 setArticles(response.data.articles);
             } catch (e) {
                 console.log(e);
@@ -38,7 +39,7 @@ const NewsList = (props) => {
             setLoading(false);
         };
         fecthData();
-    }, []);
+    }, [category]);
 
     // 대기 중일 때
     if(loading) {
