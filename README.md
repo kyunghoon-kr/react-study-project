@@ -19,3 +19,17 @@ width="450px" height="450px">
 src="https://user-images.githubusercontent.com/43274269/73330628-a9428480-42a4-11ea-870f-bc78a79224c2.png" 
 width="600px" height="450px">
 </img>
+
+### 3. hooks를 사용한 Todo-list(2020-1-29)
+<br/>
+<img 
+src="https://user-images.githubusercontent.com/43274269/74134476-fb34c400-4c2d-11ea-997c-9764e58fa80d.png" 
+width="600px" height="450px">
+</img>
+
+### 4. news-viewer(~2020.2.10)
+<br/>
+<img 
+src="https://user-images.githubusercontent.com/43274269/74134667-40f18c80-4c2e-11ea-963c-03c70f9b0e96.png" 
+width="600px" height="450px">
+</img>
