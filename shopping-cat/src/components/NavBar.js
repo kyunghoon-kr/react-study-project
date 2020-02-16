@@ -1,11 +1,27 @@
 import React from 'react';
+import styled from 'styled-components';
 
+const NavBarTemplate = styled.div`
+    background: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+`;
+
+const Button = styled.button`
+    background: blue;
+    color: white;
+    font-size: 1.5rem;
+    & + & {
+        margin-left: 1rem;
+    }
+`;
 const NavBar = (props) => {
     return (
-        <div>
-            <button>제품목록</button>
-            <button>장바구니</button>
-        </div>
+        <NavBarTemplate>
+            <Button>제품목록</Button>
+            <Button>장바구니</Button>
+        </NavBarTemplate>
     );
 };
 
