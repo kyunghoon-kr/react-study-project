@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Product = (props) => {
+const Product = ({product}) => {
     return (
         <div>
-            
+            {product.name}
+            <img src={product.src} alt="product"/>
         </div>
     );
 };
