@@ -1,10 +1,12 @@
 import React from 'react';
 
 const Product = ({product}) => {
+    console.dir(product);
+    const imageSrc = require(`../assets/cat${product.id}.jpg`);
     return (
         <div>
             {product.name}
-            <img src={product.src} alt="product"/>
+            <img src={imageSrc} alt="product"/>
         </div>
     );
 };
