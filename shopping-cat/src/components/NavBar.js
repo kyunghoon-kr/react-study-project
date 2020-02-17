@@ -17,11 +17,21 @@ const Button = styled.button`
         margin-left: 1rem;
     }
 `;
-const NavBar = (props) => {
+
+const BasketNumber = styled.button
+`
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    border-radius: 100%;
+`;
+const NavBar = ({baskets}) => {
     return (
         <NavBarTemplate>
             <Button>제품목록</Button>
             <Button>장바구니</Button>
+            {baskets.length !== 0 ? <BasketNumber>{baskets.length}</BasketNumber> : <></>}
+
         </NavBarTemplate>
     );
 };
