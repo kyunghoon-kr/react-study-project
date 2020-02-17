@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const NavBarTemplate = styled.div`
-    background: grey;
+    background: beige;
     display: flex;
     justify-content: center;
     align-items: center; 
+    height: 80px;
 `;
 
 const Button = styled.button`

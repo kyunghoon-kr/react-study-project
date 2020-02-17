@@ -8,7 +8,9 @@ const ProductTemplate = styled.div`
     border: 2px solid;
     margin-top: 10px;
     &:hover {
+        border: 3px solid;
         border-color: red;
+
     }
     img {
         width: 200px;
@@ -19,6 +21,11 @@ const ProductTemplate = styled.div`
         border-color: aquamarine;
         color: aquamarine;
         font-size: 1.4rem;
+        &:hover {
+            font-weight: bold;
+            color: red;
+            border: 0px;
+        }
     }
     p {
         font-size: 1rem;
