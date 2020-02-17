@@ -45,13 +45,17 @@ const App = (props) => {
           amount : selected.amount + 1
         }));
       } 
-      else { // 선택한 걸 또 선택한 경우 baskets 배열에서 amount 값만 증가시킨 후 재렌더링한다.
+      else { // 선택한 걸 또 선택한 경우 amount 값만 증가시킨 후 재렌더링한다.
+        setProducts(products.map(product =>
+          selected.id === product.id ? {...product, amount: selected.amount+1}
+          : product,
+        ));
         setBaskets(baskets.map(basket =>
           selected.id === basket.id ? {...basket, amount: selected.amount+1}
           : basket,
         ));
       }
-
+      console.dir(baskets);
     }, [products, baskets]
   );
 
