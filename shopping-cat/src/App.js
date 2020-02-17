@@ -60,7 +60,7 @@ const App = (props) => {
      <NavBar baskets={baskets}/>
      {/* <Route path="/" component={<ProductList products={products} onSelect={onSelect} />}/> */}
      <Route exact path="/" render={()=> <ProductList products={products} onSelect={onSelect}/>}/>
-     <Route path="/baskets" render={()=> <ProductList products={baskets}/>}/>
+     <Route path="/baskets" render={()=> <ProductList products={baskets} isBasket={true}/>}/>
      {/* <ProductList products={products} onSelect={onSelect}/>  */}
     </>
   );

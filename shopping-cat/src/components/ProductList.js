@@ -11,11 +11,11 @@ const ProductListTemplate = styled.div
     flex-wrap: wrap;
   
 `;
-const ProductList = ({products, onSelect}) => {
+const ProductList = ({products, onSelect, isBasket}) => {
     return (
         <ProductListTemplate>
             {products.map(product => (
-                <Product product={product} key={product.id} onSelect={onSelect}/>
+                <Product product={product} key={product.id} onSelect={onSelect} isBasket={isBasket}/>
             ))}
         </ProductListTemplate>
     );
