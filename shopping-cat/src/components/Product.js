@@ -5,6 +5,11 @@ const ProductTemplate = styled.div`
     width: 200px;
     display: flex;
     flex-direction: column;
+    border: 2px solid;
+    margin-top: 10px;
+    &:hover {
+        border-color: red;
+    }
     img {
         width: 200px;
         height: 100px;
@@ -13,10 +18,12 @@ const ProductTemplate = styled.div`
         border: 1px solid;
         border-color: aquamarine;
         color: aquamarine;
+        font-size: 1.4rem;
     }
     p {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
+
 `;
 
 
