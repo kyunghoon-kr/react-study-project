@@ -32,7 +32,7 @@ const Product = ({product}) => {
     return (
         <ProductTemplate>
             <img src={imageSrc} alt="product"/>
-            <p class="hi">{product.name}</p>
+            <p>{product.name}</p>
             <p>{product.age}살입니다.</p>
             <button>장바구니에 추가</button>
         </ProductTemplate>
