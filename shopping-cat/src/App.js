@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import NavBar from './components/NavBar';
 import ProductList from './components/ProductList';
+import { Route } from 'react-router-dom';
 
 const App = (props) => {
   const productName = [
@@ -57,7 +58,10 @@ const App = (props) => {
   return (
     <>
      <NavBar baskets={baskets}/>
-     <ProductList products={products} onSelect={onSelect}/>
+     {/* <Route path="/" component={<ProductList products={products} onSelect={onSelect} />}/> */}
+     <Route exact path="/" render={()=> <ProductList products={products} onSelect={onSelect}/>}/>
+     <Route path="/baskets" render={()=> <ProductList products={baskets}/>}/>
+     {/* <ProductList products={products} onSelect={onSelect}/>  */}
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const NavBarTemplate = styled.div`
     background: beige;
@@ -28,10 +29,13 @@ const BasketNumber = styled.button
 const NavBar = ({baskets}) => {
     return (
         <NavBarTemplate>
-            <Button>제품목록</Button>
-            <Button>장바구니</Button>
-            {baskets.length !== 0 ? <BasketNumber>{baskets.length}</BasketNumber> : <></>}
-
+            <Link to="/">
+                <Button>제품목록</Button>
+            </Link>
+            <Link to="/baskets">
+                <Button>장바구니</Button>
+                {baskets.length !== 0 ? <BasketNumber>{baskets.length}</BasketNumber> : <></>}
+            </Link>
         </NavBarTemplate>
     );
 };
