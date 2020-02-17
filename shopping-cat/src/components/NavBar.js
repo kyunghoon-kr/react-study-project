@@ -17,6 +17,9 @@ const Button = styled.button`
     & + & {
         margin-left: 1rem;
     }
+    &:hover {
+        color : red;
+    }
 `;
 
 const BasketNumber = styled.button
