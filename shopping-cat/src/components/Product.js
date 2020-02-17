@@ -14,14 +14,19 @@ const ProductTemplate = styled.div`
         border-color: aquamarine;
         color: aquamarine;
     }
+    p {
+        font-size: 1.5rem;
+    }
 `;
+
+
 const Product = ({product}) => {
     const imageSrc = require(`../assets/cat${product.id}.jpg`);
     return (
         <ProductTemplate>
             <img src={imageSrc} alt="product"/>
-            <h2>{product.name}</h2>
-            <h5>{product.age}살입니다.</h5>
+            <p class="hi">{product.name}</p>
+            <p>{product.age}살입니다.</p>
             <button>장바구니에 추가</button>
         </ProductTemplate>
     );
