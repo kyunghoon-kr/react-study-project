@@ -55,7 +55,6 @@ const App = (props) => {
           : basket,
         ));
       }
-      console.dir(baskets);
     }, [products, baskets]
   );
 
