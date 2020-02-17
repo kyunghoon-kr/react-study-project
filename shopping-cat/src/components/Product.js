@@ -1,13 +1,29 @@
 import React from 'react';
+import styled from 'styled-components';
 
+const ProductTemplate = styled.div`
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    img {
+        width: 200px;
+        height: 100px;
+    }
+    button {
+        border: 1px solid;
+        border-color: aquamarine;
+        color: aquamarine;
+    }
+`;
 const Product = ({product}) => {
-    console.dir(product);
     const imageSrc = require(`../assets/cat${product.id}.jpg`);
     return (
-        <div>
-            {product.name}
+        <ProductTemplate>
             <img src={imageSrc} alt="product"/>
-        </div>
+            <h2>{product.name}</h2>
+            <h5>{product.age}살입니다.</h5>
+            <button>장바구니에 추가</button>
+        </ProductTemplate>
     );
 };
 

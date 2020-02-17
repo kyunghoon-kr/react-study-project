@@ -14,10 +14,12 @@ const App = (props) => {
 
   useEffect(() => {
     for(let i=0; i<40; i++) {
+      let age = Math.floor(Math.random() * 10) + 1;
       sampleArray.push(
         {
           id: i+1,
-          name: productName[i]
+          name: productName[i],
+          age: age
         }
       );
     };
