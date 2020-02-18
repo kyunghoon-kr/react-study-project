@@ -8,14 +8,19 @@ const ProductListTemplate = styled.div
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
-  
+    button {
+        align-items: flex-end;
+        justify-content: center;
+        height: 50px;
+    }
 `;
-const ProductList = ({products, onSelect, isBasket, onAdd, onSub}) => {
+const ProductList = ({products, onSelect, isBasket, onAdd, onSub, onSubmit}) => {
     return (
         <ProductListTemplate>
             {products.map(product => (
                 <Product product={product} key={product.id} onSelect={onSelect} isBasket={isBasket} onAdd={onAdd} onSub={onSub}/>
             ))}
+            {onSubmit ? <button onClick={onSubmit}>제출하기d</button> : <></>}
         </ProductListTemplate>
     );
 };

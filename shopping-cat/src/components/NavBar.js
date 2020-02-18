@@ -29,7 +29,7 @@ const BasketNumber = styled.button
     color: white;
     border-radius: 100%;
 `;
-const NavBar = ({baskets}) => {
+const NavBar = ({baskets, onSubmit}) => {
     return (
         <NavBarTemplate>
             <Link to="/">

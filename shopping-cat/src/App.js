@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import NavBar from './components/NavBar';
 import ProductList from './components/ProductList';
+import SubmitButton from './components/SubmitButton';
 import { Route } from 'react-router-dom';
 
 const App = (props) => {
@@ -91,15 +92,27 @@ const App = (props) => {
     }, [products, baskets, onAdd]
   );
   
+  const onSubmit = () => {
+    alert('결재가 완료되었습니다.');
+    setBaskets([]);
+    setProducts(products.map(product =>
+        product.isSelected === true ? {...product, isSelected: false, amount: 0}
+        : product
+    ));
+  }
   
 
   return (
     <>
      <NavBar baskets={baskets}/>
-     {/* <Route path="/" component={<ProductList products={products} onSelect={onSelect} />}/> */}
      <Route exact path="/" render={()=> <ProductList products={products} onSelect={onSelect}/>}/>
-     <Route path="/baskets" render={()=> <ProductList products={baskets} isBasket={true} onAdd={onAdd} onSub={onSub}/>}/>
-     {/* <ProductList products={products} onSelect={onSelect}/>  */}
+     <Route path="/baskets" render={
+      ()=> 
+        <div>
+          <ProductList products={baskets} isBasket={true} onAdd={onAdd} onSub={onSub}/>
+          <SubmitButton onSubmit={onSubmit}/>
+        </div>
+     }/>
     </>
   );
 };
