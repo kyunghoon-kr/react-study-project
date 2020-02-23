@@ -19,7 +19,7 @@ export default function usePromise(promiseCreator, deps) {
         };
         process();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, deps);
+    }, deps); // 의존성 배열인 deps 전달
 
     return [loading, resolved, error];
 }
