@@ -81,7 +81,7 @@ const Product = ({product, onSelect, isBasket, onAdd, onSub}) => {
                 <button onClick={()=>onAdd(product)}>+</button>
                 <button onClick={()=>onSub(product)}>-</button>
             </div>
-            : <button onClick={()=>onSelect(product)}>장바구니에 추가</button>}
+            : <button onClick={()=> onSelect(product)}>장바구니에 추가</button>}
         </ProductTemplate>
     );
 };

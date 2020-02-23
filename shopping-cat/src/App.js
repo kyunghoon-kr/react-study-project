@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import ProductList from './components/ProductList';
 import SubmitButton from './components/SubmitButton';
 import { Route } from 'react-router-dom';
+import ProductsContainer from './containers/ProductsContainer';
 
 const App = (props) => {
   const productName = [
@@ -13,25 +14,6 @@ const App = (props) => {
 
   const [products, setProducts] = useState([]);
   const [baskets, setBaskets] = useState([]);
-  const sampleArray = [];
-
-  useEffect(() => { // 맨 처음 렌더링 될 때만 state 관리를 위하여 뒤의 배열은 비워둔다.
-    for(let i=0; i<40; i++) {
-      let age = Math.floor(Math.random() * 10) + 1;
-      sampleArray.push(
-        {
-          id: i+1,
-          name: productName[i],
-          age: age,
-          isSelected: false,
-          amount: 0
-        }
-      );
-    };
-    console.log("useEffect 호출됨!");
-    
-    setProducts(sampleArray);
-  }, [])
 
   const onAdd = useCallback(
     (selected) => {
@@ -105,11 +87,15 @@ const App = (props) => {
   return (
     <>
      <NavBar baskets={baskets}/>
-     <Route exact path="/" render={()=> <ProductList products={products} onSelect={onSelect}/>}/>
+     <Route exact path="/" render={
+       ()=> 
+          <ProductsContainer isBasket={true} onAdd={onAdd} onSub={onSub}/>
+      }/>
      <Route path="/baskets" render={
       ()=> 
         <div>
-          <ProductList products={baskets} isBasket={true} onAdd={onAdd} onSub={onSub}/>
+          {/* <ProductList products={baskets} isBasket={true} onAdd={onAdd} onSub={onSub}/> */}
+          {/* <ProductsContainer products={baskets} isBasket={true} onAdd={onAdd} onSub={onSub}/> */}
           <SubmitButton onSubmit={onSubmit}/>
         </div>
      }/>
