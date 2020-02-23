@@ -1,7 +1,8 @@
 import React from 'react';
 import Product from '../components/Product';
+import SubmitButton from '../components/SubmitButton';
 import styled from 'styled-components';
-import { add, insert } from '../moduels/products';
+import { insert, remove, submit } from '../moduels/products';
 import { connect } from 'react-redux';
 // Breakpoint pc: 1024, tablet: 768, mobile: 320
 
@@ -28,23 +29,28 @@ const ProductListTemplate = styled.div
     }
 `;
 
-
-const ProductsContainer = ({products, add, insert}) => {
+const BasketConatiner = ({baskets, insert, remove, submit}) => {
     return (
-        <ProductListTemplate>
-            {products.map(product => (
-                <Product product={product} key={product.id} onAdd={()=> {add(product); insert(product);}}/>
-            ))}
-        </ProductListTemplate>
+        <>
+            <ProductListTemplate>
+                {baskets.map(basket => (
+                    <Product product={basket} key={basket.id} onInsert={insert} onRemove={remove}/>
+                ))}
+            </ProductListTemplate>
+            <SubmitButton onSubmit={submit}/>
+        </>
+   
+
     );
 };
 
 export default connect(
     state => ({
-        products: state.products.products
+        baskets: state.products.baskets,
     }),
     {
-        add,
-        insert
+        insert,
+        remove,
+        submit
     }
-)(ProductsContainer);
+)(BasketConatiner);

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const NavBarTemplate = styled.div`
@@ -29,7 +30,7 @@ const BasketNumber = styled.button
     color: white;
     border-radius: 100%;
 `;
-const NavBar = ({baskets, onSubmit}) => {
+const NavBar = ({baskets}) => {
     return (
         <NavBarTemplate>
             <Link to="/">
@@ -42,5 +43,8 @@ const NavBar = ({baskets, onSubmit}) => {
         </NavBarTemplate>
     );
 };
-
-export default NavBar;
+export default connect(
+    state => ({
+        baskets: state.products.baskets
+    }),
+)(NavBar);

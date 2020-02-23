@@ -68,20 +68,20 @@ const ProductTemplate = styled.div`
 
 
 
-const Product = ({product, onSelect, isBasket, onAdd, onSub}) => {
+const Product = ({product, onAdd, onInsert, onRemove}) => {
     const imageSrc = require(`../assets/cat${product.id}.jpg`);
     return (
         <ProductTemplate>
             <img src={imageSrc} alt="product"/>
             <p>{product.name}</p>
             <p>{product.age}살입니다.</p>
-            {isBasket ? 
+            {onInsert ? // 장바구니인 경우
             <div>
                 <p>{product.amount}마리</p>
-                <button onClick={()=>onAdd(product)}>+</button>
-                <button onClick={()=>onSub(product)}>-</button>
+                <button onClick={()=>onInsert(product)}>+</button>
+                <button onClick={()=>onRemove(product)}>-</button>
             </div>
-            : <button onClick={()=> onSelect(product)}>장바구니에 추가</button>}
+            : <button onClick={()=> onAdd(product)}>장바구니에 추가</button>}
         </ProductTemplate>
     );
 };
