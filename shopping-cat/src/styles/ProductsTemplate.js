@@ -16,11 +16,6 @@ const ProductsTemplate = styled.div
         padding: 10px;
     }
 
-    button {
-        align-items: flex-end;
-        justify-content: center;
-        height: 50px;
-    }
 `;
 
 export default ProductsTemplate;

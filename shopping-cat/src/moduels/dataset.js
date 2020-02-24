@@ -1,3 +1,6 @@
+// dummy 데이터 대신 직접 데이터 생성
+// 나이: 1~10 랜덤, 이미지: assets/cat.xx.jpg를 id값에 따라 지정, 이름: 미리 선언
+
 const dataSet = () => {
     const productName = [
         "ali", "monsi", "hiro", "lisa", "hosin", "papa", "foi", "naomi", "onlize", "chris", "koa", "rust", "react", 

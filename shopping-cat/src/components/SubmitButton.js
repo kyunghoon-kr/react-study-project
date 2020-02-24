@@ -6,19 +6,21 @@ const SubmitButtonTemplate = styled.div`
     justify-content: center;
     align-items: flex-center; 
     height: 80px;
-    button {
-        font-size: 2rem;
-        background: blue;
-        color: white;
-        &:hover {
-            color: red;
-        }
+`;
+
+const Button = styled.button`
+    font-size: 2rem;
+    background: blue;
+    color: white;
+    &:hover {
+        color: red;
     }
 `;
+
 const SubmitButton = ({onSubmit}) => {
     return (
         <SubmitButtonTemplate>
-            <button onClick={onSubmit}>제출하기</button>
+            <Button onClick={onSubmit}>제출하기</Button>
         </SubmitButtonTemplate>
     );
 };

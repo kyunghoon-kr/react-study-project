@@ -14,74 +14,78 @@ const ProductTemplate = styled.div`
         width: 45%;
         margin-left: 10px;
         margin-bottom: 30px;
-        button {
-            font-size: 1.0rem;
-        }
-        p {
-            font-size: 0.7rem;
-        }
-        img {
-            height: 150px;
-        }
     }
     @media only screen and (min-width: 768px) {
         width: 25%;
         margin-left: 30px;
-        p {
-            font-size: 1.0rem;
-        }
-        button {
-            font-size: 1.4rem;
-        }
-        
     }
     @media only screen and (min-width: 1024px) {
         width: 23%;
         margin-left: 10px;
         margin-bottom: 5px;
-        p {
-            font-size: 1.1rem;
-        }
-        button {
-            font-size: 1.6rem;
-        }
-        img {
-            height: 200px;
-        }
     }
-
     &:hover {
         border: 3px solid;
         border-color: red;
     }
-    button {
-        border: 1px solid;
-        border-color: aquamarine;
-        color: aquamarine;
-        &:hover {
-            font-weight: bold;
-            color: red;
-            border: 0px;
-        }
+`;
+
+const Button = styled.button`
+    border: 1px solid;
+    border-color: aquamarine;
+    color: aquamarine;
+    &:hover {
+        font-weight: bold;
+        color: red;
+        border: 0px;
+    }
+    @media only screen and (min-width: 320px) {
+        font-size: 1.0rem;
+    }
+    @media only screen and (min-width: 768px) {
+        font-size: 1.4rem;    
+    }
+    @media only screen and (min-width: 1024px) {
+        font-size: 1.6rem;
     }
 `;
 
+const Text = styled.p`
+    @media only screen and (min-width: 320px) {
+        font-size: 0.7rem;
+    }
+    @media only screen and (min-width: 768px) {
+        font-size: 1.0rem;    
+    }
+    @media only screen and (min-width: 1024px) {
+        font-size: 1.1rem;
+    }
+`;
+
+const CatImage = styled.img`
+    @media only screen and (min-width: 320px) {
+        height: 100px;
+    }
+    @media only screen and (min-width: 1024px) {
+        height: 200px;
+    }
+`;
 
 
 const Product = ({product, onAdd, onInsert, onRemove}) => {
     const imageSrc = require(`../assets/cat${product.id}.jpg`);
     return (
         <ProductTemplate>
-            <img src={imageSrc} alt="product"/>
-            <p>{product.name}</p>
-            <p>{product.age}살입니다.</p>
+            <CatImage src={imageSrc} alt="product"/>
+            <Text>{product.name}</Text>
+            <Text>{product.age}살입니다.</Text>
             {onInsert ? // 장바구니인 경우
-            <div>
-                <p>{product.amount}마리</p>
-                <button onClick={()=>onInsert(product)}>+</button>
-                <button onClick={()=>onRemove(product)}>-</button>
-            </div>
-            : <button onClick={()=> onAdd(product)}>장바구니에 추가</button>}
+            <>
+                <Text>{product.amount}마리</Text>
+                <Button onClick={()=>onInsert(product)}>+</Button>
+                <Button onClick={()=>onRemove(product)}>-</Button>
+            </>
+            : <Button onClick={()=> onAdd(product)}>장바구니에 추가</Button>}
         </ProductTemplate>
     );
 };
