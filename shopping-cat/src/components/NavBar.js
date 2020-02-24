@@ -43,6 +43,7 @@ const NavBar = ({baskets}) => {
         </NavBarTemplate>
     );
 };
+// baskets 상태 값만 참조
 export default connect(
     state => ({
         baskets: state.products.baskets

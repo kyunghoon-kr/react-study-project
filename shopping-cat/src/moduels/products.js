@@ -32,7 +32,7 @@ function products(state = initialState, action) {
                 }
             else return state
 
-        case INSERT:
+        case INSERT: // 주문 개수 추가
             return {
                 products: state.products.map(product =>
                     action.product.id === product.id ? {...product, amount: action.product.amount+1}
@@ -59,7 +59,7 @@ function products(state = initialState, action) {
                     : product)
                 }
             }
-        case SUBMIT:
+        case SUBMIT: // 제출하기
             alert("구매 완료");
             return {
                 products: initialState.products,

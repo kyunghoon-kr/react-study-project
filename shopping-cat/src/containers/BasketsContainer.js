@@ -4,7 +4,6 @@ import SubmitButton from '../components/SubmitButton';
 import ProductsTemplate from '../styles/ProductsTemplate'
 import { insert, remove, submit } from '../moduels/products';
 import { connect } from 'react-redux';
-// Breakpoint pc: 1024, tablet: 768, mobile: 320
 
 
 const BasketConatiner = ({baskets, insert, remove, submit}) => {
@@ -17,8 +16,6 @@ const BasketConatiner = ({baskets, insert, remove, submit}) => {
             </ProductsTemplate>
             <SubmitButton onSubmit={submit}/>
         </>
-   
-
     );
 };
 
