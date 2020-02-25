@@ -18,7 +18,6 @@ const initialState = {
 };
 
 // 리듀서 함수 생성
-
 // redux-action 라이브러리 없이 작성할 때
 function products(state = initialState, action) {
     switch (action.type) {
