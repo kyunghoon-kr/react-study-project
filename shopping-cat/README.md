@@ -19,3 +19,6 @@ clone `package.json` => `$npm install`
   - components : 뷰 컴포넌트
   - containers : 리덕스로 연결하여 컴포넌트를 띄우는 컨테이너
   - styles: 중복되는 styled-components
+
+
+### 배포방법
